@@ -1,3 +1,33 @@
 // Place all the styles related to the post controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.logo img{
+  width:500px;
+}
+.lng_btn{
+  margin:20px;
+}
+
+#form{
+  widows: 600px;
+}
+
+input[type="text"]{
+  width: 800px;
+}
+
+textarea{
+  width: 800px;
+  height: 100px;
+}
+
+.info{
+  width: 740px;
+  margin: auto;
+}
+
+select{
+  width:800px;
+}
