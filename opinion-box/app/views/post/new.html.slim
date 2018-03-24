@@ -1,0 +1,43 @@
+h1.text-center
+  = @texts[:title]
+#form.well.auth-box
+  = form_tag :controller => 'post', :action => 'create' ,:multipart => true
+    = hidden_field_tag :language_type ,@texts[:language_type]
+    fieldset
+      h5
+        = @texts[:language]
+      = link_to '/post/new/1'
+        button.btn.btn-default.btn-sm type="submit"
+          = image_tag "JP.png"
+      = link_to '/post/new/2'
+        button.btn.btn-default.btn-sm type="submit"
+          = image_tag "US.png"
+      = link_to '/post/new/3'
+        button.btn.btn-default.btn-sm type="submit"
+          = image_tag "CN.png"
+      = link_to '/post/new/4'
+        button.btn.btn-default.btn-sm type="submit"
+          = image_tag "KR.png"
+      div
+        h5
+          = @texts[:category_name]
+        = select_tag :category, options_for_select({@texts[:category_1] => "1", @texts[:category_2] => "2",  @texts[:category_3] => "3", @texts[:category_4] => "4", @texts[:category_5] => "5"})
+      div
+        h5
+          = @texts[:opinion_text]
+        = text_area_tag :text
+      div
+        h5
+          = @texts[:contact]
+        = text_field_tag :contact
+      div
+        h5
+          = @texts[:view_setting]
+        = radio_button_tag :can_viewing, '1', :checked => true
+        = @texts[:view_1]
+        = radio_button_tag :can_viewing, '2'
+        = @texts[:view_2]
+
+      div
+        hr
+        = submit_tag @texts[:submit], class: "btn btn-primary btn-lg btn-block"

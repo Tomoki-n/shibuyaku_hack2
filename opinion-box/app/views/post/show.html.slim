@@ -1,0 +1,40 @@
+br
+.row
+  .col-sm-12.center
+    = link_to '/post/1'
+      button.btn.btn-default.btn-sm type="submit"
+        = image_tag "JP.png"
+    = link_to '/post/2'
+      button.btn.btn-default.btn-sm type="submit"
+        = image_tag "US.png"
+    = link_to '/post/3'
+      button.btn.btn-default.btn-sm type="submit"
+        = image_tag "CN.png"
+    = link_to '/post/4'
+      button.btn.btn-default.btn-sm type="submit"
+        = image_tag "KR.png"
+br
+- @posts.each do |post|
+  - if post[:can_viewing] == "1"
+    .col-sm-6
+      .panel.panel-default
+        .panel-heading
+          strong
+            - if post[:category] == 1
+              = @texts[:category_1]
+            - elsif post[:category] == 2
+              = @texts[:category_2]
+            - elsif post[:category] == 3
+              = @texts[:category_3]
+            - elsif post[:category] == 4
+              = @texts[:category_4]
+            - elsif post[:category] == 5
+              = @texts[:category_5]
+          br
+          span.text-muted
+          = @texts[:post_date]
+          = post[:created_at]
+        .panel-body
+          .col-sm-12
+           / = image_tag post[:image]
+           = post.convert_text(@texts[:language_type])
