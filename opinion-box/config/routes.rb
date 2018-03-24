@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/post/:id' => 'post#show'
+  get '/secret' => 'post#secret'
   get '/post/new/:id' => 'post#new'
   post '/post/create' => 'post#create'
 

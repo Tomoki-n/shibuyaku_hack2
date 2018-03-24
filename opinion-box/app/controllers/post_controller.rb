@@ -17,6 +17,10 @@ class PostController < ApplicationController
       render 'new'
     end
   end
+  def secret
+    @posts = Post.all
+    @texts = create_text
+  end
 
   def create_post_params
     @post = Post.new
