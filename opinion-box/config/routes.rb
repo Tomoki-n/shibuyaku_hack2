@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get '/secret' => 'post#secret'
   get '/post/new/:id' => 'post#new'
   post '/post/create' => 'post#create'
-
- root :to => 'post#new'
+  get '/post/plus/:id' => 'post#plus'
+  get '/post/minus/:id' => 'post#minus'
+  root :to => 'post#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -25,13 +25,15 @@ class PostController < ApplicationController
   def plus
     @post = Post.find(params[:id])
     @post.plus += 1
-    render 'show'
+    @post.save
+    redirect_to :action => "show"
   end
 
   def minus
     @post = Post.find(params[:id])
     @post.minus += 1
-    render 'show'
+    @post.save
+    redirect_to :action => "show"
   end
 
 

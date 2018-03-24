@@ -38,3 +38,13 @@ br
           .col-sm-12
            / = image_tag post[:image]
            = post.convert_text(@texts[:language_type])
+          .col-sm-6.center
+            = link_to '/post/plus/' + post[:id].to_s
+              button.btn.btn-default.btn-sm type="submit"
+               = image_tag "good.png",class:"buttons"
+            = post[:plus]
+          .col-sm-6.center
+            = link_to '/post/minus/' + post[:id].to_s
+              button.btn.btn-default.btn-sm type="submit"
+                = image_tag "bad.png",class:"buttons"
+            = post[:minus]
