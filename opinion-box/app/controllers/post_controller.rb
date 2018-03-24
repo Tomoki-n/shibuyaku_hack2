@@ -22,6 +22,19 @@ class PostController < ApplicationController
     @texts = create_text
   end
 
+  def plus
+    @post = Post.find(params[:id])
+    @post.plus += 1
+    render 'show'
+  end
+
+  def minus
+    @post = Post.find(params[:id])
+    @post.minus += 1
+    render 'show'
+  end
+
+
   def create_post_params
     @post = Post.new
     @post[:main_text] = params[:text]
